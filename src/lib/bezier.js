@@ -9,14 +9,26 @@ class BezierDrawer {
     this.width = this.endX - this.startX
     this.height = this.startY - this.endY
     this.standard = standard
+    if (standard) {
+      this.settings = {bezier: {lineWidth: 5, strokeStyle: '#000000'},
+                      linklines: {lineWidth: 3, strokeStyle: '#606060'}}
+    } else {
+      this.settings = {bezier: {lineWidth: 2, strokeStyle: '#ffffff'},
+                      linklines: {lineWidth: 1, strokeStyle: '#ffffff'}}
+    }
     this.draw(data)
   }
   drawBorder() {
     let context = this.context
     // 绘制边框
+    context.beginPath()
+    context.moveTo(this.startX, this.endY)
+    context.lineTo(this.startX, this.startY)
+    context.lineTo(this.endX, this.startY)
     context.lineWidth = 1
-    context.strokeStyle = '#ff0000'
-    context.strokeRect(this.startX, this.endY, this.width, this.height)
+    context.strokeStyle = '#000000'
+    context.stroke()
+    context.closePath()
   }
   drawStartAndEndPoint() {
     let context = this.context
@@ -36,8 +48,8 @@ class BezierDrawer {
     context.beginPath()
     context.moveTo(this.startX, this.startY)
     context.lineTo(this.endX, this.endY)
-    context.lineWidth = 5
-    context.strokeStyle = '#acacac'
+    context.lineWidth = 4
+    context.strokeStyle = 'rgba(0,0,0,.1)'
     context.stroke()
     context.closePath()
   }
@@ -49,8 +61,8 @@ class BezierDrawer {
     context.lineTo(this.startX, this.startY)
     context.moveTo(x2, y2)
     context.lineTo(this.endX, this.endY)
-    context.lineWidth = 3
-    context.strokeStyle = '#606060'
+    context.lineWidth = this.settings.linklines.lineWidth
+    context.strokeStyle = this.settings.linklines.strokeStyle
     context.stroke()
     context.closePath()
   }
@@ -59,10 +71,10 @@ class BezierDrawer {
     // 绘制调节bezier曲线的两个点
     context.beginPath()
     context.moveTo(x1, y1)
-    context.arc(x1, y1, 5, 0, 2 * Math.PI, false)
+    context.arc(x1, y1, 1.5, 0, 2 * Math.PI, false)
     context.moveTo(x2, y2)
-    context.arc(x2, y2, 5, 0, 2 * Math.PI, false)
-    context.fillStyle = '#00AABB'
+    context.arc(x2, y2, 1.5, 0, 2 * Math.PI, false)
+    context.fillStyle = '#ffffff'
     context.fill()
     context.closePath()
   }
@@ -72,8 +84,8 @@ class BezierDrawer {
     context.beginPath()
     context.moveTo(this.startX, this.startY)
     context.bezierCurveTo(x1, y1, x2, y2, this.endX, this.endY)
-    context.lineWidth = 5
-    context.strokeStyle = '#000000'
+    context.lineWidth = this.settings.bezier.lineWidth
+    context.strokeStyle = this.settings.bezier.strokeStyle
     context.stroke()
     context.closePath()
   }

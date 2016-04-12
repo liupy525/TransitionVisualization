@@ -13,7 +13,7 @@ export default {
   },
   props: {
     rectInfo: Object,
-    parameters: Array,
+    currentParams: Array,
   },
   ready: function () {
     this.bezierDrawer = new Bezier('#drawing',
@@ -21,10 +21,10 @@ export default {
                                   this.rectInfo.start.y,
                                   this.rectInfo.end.x,
                                   this.rectInfo.end.y,
-                                  this.parameters)
+                                  this.currentParams)
   },
   watch: {
-    'parameters': {
+    'currentParams': {
       handler: function (val) {
         this.bezierDrawer.draw(val)
       },
@@ -36,5 +36,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+#drawing {
+  background: linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%) center no-repeat,
+  		repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+  		linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+	background-size: 100% 50%, 100% 50%, auto;
+	background-position: 25%, 0, 0;
+}
 </style>

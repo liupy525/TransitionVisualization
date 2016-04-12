@@ -30,7 +30,7 @@ export default {
       if (this.dragging) {
         return 10
       } else {
-        return 1
+        return 2
       }
     }
   },
@@ -76,7 +76,7 @@ export default {
     stopDrag: function (e) {
       if (this.dragging) {
         this.dragging = false
-        
+
         let pageX = e.pageX-this.offset.x
         if (pageX > this.limit.w) {
           this.pointer.x = this.limit.w
@@ -98,6 +98,8 @@ export default {
         let body = document.querySelector('body')
         eventUtil.removeHandler(body, 'mousemove', this.onDrag)
         eventUtil.removeHandler(body, 'mouseup', this.stopDrag)
+
+        this.$dispatch('chang-current')
       }
     },
   },
@@ -106,9 +108,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .move-button {
-
-  }
   .pointer {
     position: absolute;
     z-index: 1;

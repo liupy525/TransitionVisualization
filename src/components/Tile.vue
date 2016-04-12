@@ -1,34 +1,36 @@
 <template>
-  <canvas class="tile" width="60" height="60" :class="location" :style="getStyle()"></canvas>
+  <canvas :id="info.id" :width="info.w"
+          :height="info.h" class="tile">
+  </canvas>
 </template>
 
 <script>
+
+import Bezier from '../lib/bezier.js'
+
 export default {
-  props: {
-    location: String,
-    duration: Number,
-    timingFunction: String,
-  },
-  methods: {
-    getStyle() {
-      let transitionDuration = 'transition-duration: ' + this.duration + 's;'
-      let transitionTimingFunction = 'transition-timing-function: ' + this.timingFunction + ';'
-      return transitionTimingFunction + transitionDuration
+  data() {
+    return {
+      bezier: null
     }
-  }
+  },
+  props: {
+    info: Object,
+    parameters: Array,
+  },
+  ready: function () {
+    this.bezier = new Bezier('#'+this.info.id, 10, this.info.w-10, this.info.h-10, 10, this.parameters, false)
+  },
+  watch: {
+    'parameters': function () {
+      this.bezier.draw(this.parameters)
+    },
+  },
 }
 </script>
 
-<style>
+<style scoped>
   .tile {
-    transition-property: all;
-    background-color: red;
-    margin-right: 200px;
-  }
-  .left {
-    transform: translateX(0px);
-  }
-  .right {
-    transform: translateX(200px);
+    background-color: #E5E5E5;
   }
 </style>
