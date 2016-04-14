@@ -57,10 +57,12 @@ export default {
       if (this.picked==='scale') {
         document.querySelector('.current').style.marginTop = '40px'
         document.querySelector('.compare').style.marginTop = '-65px'
-        document.querySelector('.compare').style.marginLeft = '200px'
+        document.querySelector('.current').style.marginLeft = '20px'
+        document.querySelector('.compare').style.marginLeft = '220px'
       } else {
         document.querySelector('.current').style.marginTop = '20px'
         document.querySelector('.compare').style.marginTop = '20px'
+        document.querySelector('.current').style.marginLeft = '0px'
         document.querySelector('.compare').style.marginLeft = '0px'
       }
       this.location = 'beginning'
