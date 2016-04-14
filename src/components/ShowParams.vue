@@ -4,8 +4,10 @@
       <code>
         cubic-bezier(<span class="params"><span>{{currentParams[0]}}</span>,<span>{{currentParams[1]}}</span>,<span>{{currentParams[2]}}</span>,<span>{{currentParams[3]}}</span></span>)
       </code>
+      <button type="button" @click="save">Save</button>
+      <button type="button" @click="export">Export</button>
     </h1>
-    <button type="button" @click="save">Save</button>
+
   </header>
 </template>
 
@@ -26,24 +28,25 @@ export default {
         this.$dispatch('save-current')
       }
     },
+    export: function () {
+      this.$dispatch('show-export')
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+  button[type="button"] {
+    font-size: 16px;
+    vertical-align: middle;
+    margin: 0 10px;
+  }
   header {
-    width: 690px;
     overflow: hidden;
     position: relative;
     left: 50px;
     h1 {
       float: left;
-    }
-    button {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      margin-top: -13px;
     }
   }
   .params {

@@ -26,11 +26,11 @@ import Tile from './Tile.vue'
 export default {
   data() {
     return {
-      duration: 1,
       location: 'left',
     }
   },
   props: {
+    duration: Number,
     currentParams: Array,
     compareParams: Array,
   },
@@ -100,5 +100,6 @@ export default {
   }
   .right {
     transform: translateX(280px);
+    transform: rotate(180deg);
   }
 </style>

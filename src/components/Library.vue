@@ -1,11 +1,7 @@
 <template>
   <section>
 
-    <h1>
-      Library
-      <button type="button">Import</button>
-      <button type="button">Export</button>
-    </h1>
+    <h1>Library</h1>
     <p>
       Click on a curve to compare it with the current one.
     </p>
@@ -61,11 +57,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  button[type="button"] {
-    font-size: 16px;
-    vertical-align: middle;
-    margin: 0 10px;
-  }
   p {
     margin: 0;
   }
