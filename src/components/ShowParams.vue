@@ -4,8 +4,10 @@
       <code>
         cubic-bezier(<span class="params"><span>{{currentParams[0]}}</span>,<span>{{currentParams[1]}}</span>,<span>{{currentParams[2]}}</span>,<span>{{currentParams[3]}}</span></span>)
       </code>
-      <button type="button" @click="save">Save</button>
-      <button type="button" @click="export">Export</button>
+      <div class="buttons">
+        <button type="button" @click="save">Save</button>
+        <button type="button" @click="export">Export</button>
+      </div>
     </h1>
 
   </header>
@@ -36,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .buttons {
+    display: inline-block;
+  }
   button[type="button"] {
     font-size: 16px;
     vertical-align: middle;

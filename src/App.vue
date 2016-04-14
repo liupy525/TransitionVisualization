@@ -28,7 +28,7 @@ export default {
       currentParams: storage.getTiles('current') || [0.67, 0.33, 0.33, 0.67],
       compareParams: (storage.getTiles()[0] && storage.getTiles()[0]['params']) || [0.67, 0.33, 0.33, 0.67],
       showExport: false,
-      duration: 2
+      duration: 1
     }
   },
   computed: {
