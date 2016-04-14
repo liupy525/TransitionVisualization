@@ -33,7 +33,10 @@ export default {
   },
   computed: {
     hint: function () {
-      if (this.currentParams[1]>1 || this.currentParams[1] <0) {
+      if (this.currentParams[1] > 1 ||
+          this.currentParams[1] < 0 ||
+          this.currentParams[3] > 1 ||
+          this.currentParams[3] < 0) {
         return true
       } else {
         return false
