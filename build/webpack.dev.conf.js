@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var merge = require('webpack-merge')
+var config = require('../config')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -9,6 +10,9 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 })
 
 module.exports = merge(baseWebpackConfig, {
+  output: {
+    publicPath: config.build.assetsPublicPath,
+  },
   // eval-source-map is faster for development
   devtool: '#eval-source-map',
   plugins: [
