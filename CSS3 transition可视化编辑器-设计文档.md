@@ -1,29 +1,15 @@
-# Transition Visualization
+﻿# CSS3 transition可视化编辑器-设计文档
 
-360前端星的选拔?作业题
+标签（空格分隔）： 文档
 
-题目要求如下：
-
-> **基本要求：**
-> 拖动控制点或填入参数，点击生成按钮，自动生成CSS3 transition代码和演示滑块。
-
-> **加分项：**
-> 编辑器界面好看，操作流畅，生成的代码兼容性好，有API可以扩展功能
-
-> 点击查看[参考示例](http://cubic-bezier.com/)
-
-> 和参考例子不同的是，参考例子只生成了bezier参数，作业要求生成完整的css3动画代码。 例如，编辑之后点击 export 按钮输出代码：
-
-> ```css
-div{
-  -webkit-transition: all 600ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: all 600ms cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-```
+---
 
 ## 需求分析
 
-
+> **基本要求：**
+> 拖动控制点或填入参数，点击生成按钮，自动生成CSS3 transition代码和演示滑块。
+> **加分项：**
+> 编辑器界面好看，操作流畅，生成的代码兼容性好，有API可以扩展功能
 
 制作一个类似[参考示例](http://cubic-bezier.com/)的页面，实现CSS3动画中`transition`属性的可视化编辑器。
 
