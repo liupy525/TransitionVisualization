@@ -21,6 +21,31 @@ div{
 }
 ```
 
+## 运行
+只看效果：
+
+```javascript
+git clone https://github.com/liupy525/TransitionVisualization.git
+
+cd TransitionVisualization/dist/
+
+在浏览器中打开 index.html 文件
+```
+
+再次开发：
+
+```javascript
+git clone https://github.com/liupy525/TransitionVisualization.git
+
+cd TransitionVisualization
+
+npm run install
+
+npm run dev
+
+浏览器打开 http://localhost:8080
+```
+
 ## 需求分析
 
 
