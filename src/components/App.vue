@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import BezierDrawPlane from './components/BezierDrawPlane.vue'
-import ShowParams from './components/ShowParams.vue'
-import PreviewCompare from './components/PreviewCompare.vue'
-import Library from './components/Library.vue'
-import Modal from './components/Modal.vue'
-import storage from './lib/storage.js'
+import BezierDrawPlane from './BezierDrawPlane.vue'
+import ShowParams from './ShowParams.vue'
+import PreviewCompare from './PreviewCompare.vue'
+import Library from './Library.vue'
+import Modal from './Modal.vue'
+import storage from '../lib/storage.js'
 
 export default {
   data() {

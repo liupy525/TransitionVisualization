@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './components/App.vue'
 
 import './assets/normalize.css'
 import './assets/main.css'
