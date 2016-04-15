@@ -7,9 +7,8 @@
     <library class="library" :compare-params.sync="compareParams"></library>
     <modal :show.sync="showExport" class="modal">
       <h1 slot="header">Copy the code and save to a file to export</h1>
-      <textarea slot="body" name="bezier" rows="8" cols="50">div {\n
-    transition: all {{duration*1000}}ms cubic-bezier({{currentParams}});\n
-}</textarea>
+      <textarea slot="body" name="bezier" rows="8" cols="50">div {\n-webkit-transition: all {{duration*1000}}ms cubic-bezier({{currentParams}});\ntransition: all {{duration*1000}}ms cubic-bezier({{currentParams}});\n}\n
+      </textarea>
     </modal>
   </div>
 </template>
