@@ -19,7 +19,7 @@ export default {
     parameters: Array,
   },
   ready: function () {
-    this.bezier = new Bezier('#'+this.info.id, 10, this.info.w-10, this.info.h-10, 10, this.parameters, false)
+    this.bezier = new Bezier('#'+this.info.id, this.info.start.x, this.info.start.y, this.info.end.x, this.info.end.y, this.parameters, this.info.standard || false)
   },
   watch: {
     'parameters': function () {

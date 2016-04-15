@@ -8,7 +8,7 @@
     <div class="library-tile-wrapper" v-for="(index, tile) in tiles" :class="'tile-wrapper-'+index" @click="change" :transition>
       <tile class="library-tiles"
             :class="{active:index==compareIndex}"
-            :info="{id: 'tile-'+index, w: 100, h: 100}"
+            :info="{id: 'tile-'+index, w: 100, h: 100, start: {x:10, y:90}, end:{x:90, y:10}}"
             :parameters="tile.params">
       </tile>
       <span :title="tile.name">{{tile.name}}</span>

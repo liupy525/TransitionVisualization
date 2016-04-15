@@ -5,14 +5,14 @@
                   :limit="limit"
                   @chang-current="handleChangeCurrent">
     </move-button>
-    <bezier-drawer :rect-info.once="rect"
-                    :current-params="currentParams">
-    </bezier-drawer>
+    <tile :info.once="rect"
+          :parameters="currentParams">
+    </tile>
   </div>
 </template>
 
 <script>
-import bezierDrawer from './BezierDrawer.vue'
+import Tile from './Tile.vue'
 import moveButton from './MoveButton.vue'
 import storage from '../lib/storage.js'
 
@@ -21,6 +21,10 @@ export default {
     let rect = {
       start: {x:0, y:450},
       end  : {x:300, y:150},
+      id   : 'drawing',
+      w    : 300,
+      h    : 600,
+      standard: true,
     }
     let limit = {w: 300, h: 600}
     let width = rect.end.x - rect.start.x
@@ -58,7 +62,7 @@ export default {
       deep: true,
     }
   },
-  components: { bezierDrawer, moveButton },
+  components: { Tile, moveButton },
   methods: {
     handleChangeCurrent: function () {
       storage.saveTile(this.currentParams, 'current')
@@ -71,5 +75,12 @@ export default {
 <style scoped>
   .bezier-draw-plane {
     position: relative;
+  }
+  #drawing {
+    background: linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%) center no-repeat,
+    		repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+    		linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+  	background-size: 100% 50%, 100% 50%, auto;
+  	background-position: 25%, 0, 0;
   }
 </style>

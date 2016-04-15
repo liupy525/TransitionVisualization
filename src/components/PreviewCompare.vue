@@ -16,12 +16,12 @@
       <span>{{duration}} {{duration | pluralize 'second'}}</span>
     </div>
     <div class="tile-wrapper current" :class="location" :style="getCurrentStyle()">
-      <tile :info="{id: 'mine', w: 60, h: 60}"
+      <tile :info="{id: 'mine', w: 60, h: 60, start:{x:10,y:50}, end:{x:50,y:10}}"
           :parameters="currentParams">
       </tile>
     </div>
     <div class="tile-wrapper compare" :class="location" :style="getCompareStyle()">
-      <tile :info="{id: 'comparison', w: 60, h: 60}"
+      <tile :info="{id: 'comparison', w: 60, h: 60, start:{x:10,y:50}, end:{x:50,y:10}}"
           :parameters="compareParams">
       </tile>
     </div>

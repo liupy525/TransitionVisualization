@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import './normalize.css'
-import './main.css'
+import './assets/normalize.css'
+import './assets/main.css'
 
 /* eslint-disable no-new */
 Vue.config.debug = true
