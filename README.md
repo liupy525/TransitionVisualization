@@ -25,9 +25,9 @@ div{
 只看效果：
 
 ```javascript
-git clone https://github.com/liupy525/TransitionVisualization.git
+git clone https://github.com/liupy525/Visual-CSS.git
 
-cd TransitionVisualization/dist/
+cd Visual-CSS/dist/
 
 在浏览器中打开 index.html 文件
 ```
@@ -35,9 +35,9 @@ cd TransitionVisualization/dist/
 再次开发：
 
 ```javascript
-git clone https://github.com/liupy525/TransitionVisualization.git
+git clone https://github.com/liupy525/Visual-CSS.git
 
-cd TransitionVisualization
+cd Visual-CSS
 
 npm run install
 
